@@ -28,8 +28,11 @@ export const Footer = () => {
               className="uppercase text-primary-white-100 space-y-6 md:flex md:space-y-0 space-x-4"
               id="nav"
             >
-              {navlist.map((li) => (
-                <li className="hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
+              {navlist.map((li, index) => (
+                <li
+                  key={index + 1}
+                  className="hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150"
+                >
                   {li}
                 </li>
               ))}
