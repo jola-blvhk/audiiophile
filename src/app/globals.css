@@ -30,6 +30,6 @@ body {
 }
 @layer components {
   .maxWidthSection {
-    @apply max-w-[1400px] m-auto;
+    @apply max-w-[1200px] m-auto;
   }
 }

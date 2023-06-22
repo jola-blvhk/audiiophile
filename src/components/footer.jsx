@@ -7,6 +7,7 @@ import Facebook from "../../assets/shared/desktop/icon-facebook.svg";
 import Twitter from "../../assets/shared/desktop/icon-twitter.svg";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export const Footer = () => {
   const navlist = ["home", "headphones", "speakers", "earphones"];
@@ -20,7 +21,9 @@ export const Footer = () => {
           <div className="grid m-auto md:m-0 gap-12 mb-3">
             <div className=" bg-secondary-brown-100 w-24 h-1 m-auto md:m-0"></div>
             <div className="m-auto md:m-0">
-              <Image alt="image" src={Logo} className="" />
+              <Link href="/">
+                <Image alt="image" src={Logo} className="" />
+              </Link>
             </div>
           </div>
           <div className="lg:flex mt-9 lg:mt-0 lg:items-end">
