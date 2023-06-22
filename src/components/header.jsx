@@ -18,7 +18,7 @@ export const Header = () => {
           <div className="maxWidthSection">
             <div className="flex items-center justify-between ">
               <Image
-                alt = "image"
+                alt="image"
                 src={Hamburger}
                 className="md:hidden"
                 onClick={() => {
@@ -47,9 +47,8 @@ export const Header = () => {
                 id="nav"
               >
                 {navlist.map((li, index) => (
-                  <Link href={`/${li}`}>
-            
-                    <li key={index + 1 } className="hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
+                  <Link key={index + 1} href={`/${li}`}>
+                    <li className="hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
                       {li}
                     </li>
                   </Link>
@@ -64,8 +63,8 @@ export const Header = () => {
                   id="nav"
                 >
                   {navlist.map((li, index) => (
-                    <Link href={`/${li}`}>
-                      <li key={index + 1 } className="mb-12 hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
+                    <Link key={index + 1} href={`/${li}`}>
+                      <li className="mb-12 hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
                         {li}
                       </li>
                     </Link>

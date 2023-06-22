@@ -82,6 +82,7 @@ export default function Home() {
           <div className="bg-[url('/assets/home/desktop/pattern-circles.svg')] bg-no-repeat bg-center bg-secondary-brown-100 pb-9 pt-9 px-9 md:px-20 lg:pb-9 text-center lg:text-left rounded-md lg:flex gap-6 lg:flex-row relative">
             <div className="w-full  ">
               <Image
+                alt="image"
                 className="m-auto relative lg:top-2 w-[50%] md:w-[40%] lg:w-[70%] object-contain"
                 src={Speaker}
               />

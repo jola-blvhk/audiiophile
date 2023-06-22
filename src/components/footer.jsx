@@ -41,10 +41,10 @@ export const Footer = () => {
         </div>
         <div className="flex justify-between mt-9">
           <div className=" text-primary-gray-100 lg:w-[40%]">
-            Audiophile is an all in one stop to fulfill your audio needs. We're
-            a small team of music lovers and sound specialists who are devoted
-            to helping you get the most out of personal audio. Come and visit
-            our demo facility - we&apos;re open 7 days a week.
+            Audiophile is an all in one stop to fulfill your audio needs.
+            We&apos;re a small team of music lovers and sound specialists who
+            are devoted to helping you get the most out of personal audio. Come
+            and visit our demo facility - we&apos;re open 7 days a week.
           </div>
           <div className="hidden lg:flex justify-between w-32 lg:items-end">
             <div>

@@ -83,7 +83,7 @@ const ProductDetail = () => {
           <div className="space-y-2">
             {data.includes.map((info, index) => {
               return (
-                <p key={ index + 1} className="lg:text-lg">
+                <p key={index + 1} className="lg:text-lg">
                   <span className="mr-4 font-bold text-secondary-brown-100">
                     {info.quantity + "x"}{" "}
                   </span>{" "}
@@ -98,12 +98,14 @@ const ProductDetail = () => {
       <div className="grid md:grid-cols-2 gap-12 w-full my-12 maxWidthSection">
         <div className="space-y-12">
           <Image
+            alt="image"
             src={data.gallery.first.desktop}
             className="w-full rounded-md"
             width={200}
             height={200}
           />
           <Image
+            alt="image"
             src={data.gallery.second.desktop}
             className="w-full h-auto object-cover rounded-md"
             width={200}
@@ -112,6 +114,7 @@ const ProductDetail = () => {
         </div>
         <div>
           <Image
+            alt="image"
             src={data.gallery.third.desktop}
             className="w-full h-full object-cover rounded-md"
             width={200}
@@ -126,7 +129,13 @@ const ProductDetail = () => {
         </h3>
         <div className="grid md:grid-cols-3 md:gap-5 lg:gap-20">
           {data.others.map((info, index) => {
-            return <Others key={ index + 1} name={info.name} image={info.image.desktop} />;
+            return (
+              <Others
+                key={index + 1}
+                name={info.name}
+                image={info.image.desktop}
+              />
+            );
           })}
         </div>
       </div>

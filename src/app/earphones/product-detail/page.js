@@ -98,12 +98,14 @@ const ProductDetail = () => {
       <div className="grid md:grid-cols-2 gap-12 w-full h-[200px] my-12 maxWidthSection">
         <div className="space-y-12">
           <Image
+            alt="image"
             src={data.gallery.first.desktop}
             className="w-full rounded-md"
             width={200}
             height={200}
           />
           <Image
+            alt="image"
             src={data.gallery.second.desktop}
             className="w-full h-auto object-cover rounded-md"
             width={200}
@@ -112,6 +114,7 @@ const ProductDetail = () => {
         </div>
         <div>
           <Image
+            alt="image"
             src={data.gallery.third.desktop}
             className="w-full  object-cover rounded-md"
             width={200}
