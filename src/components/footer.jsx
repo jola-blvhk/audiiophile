@@ -10,10 +10,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const Footer = () => {
-  const navlist = ["headphones", "speakers", "earphones"];    
+  const navlist = ["headphones", "speakers", "earphones"];
   const date = new Date().getFullYear();
   const [noHover, hover] = useState(false);
- 
+
   return (
     <div className=" bg-primary-black-90 text-primary-white-100 grid gap-9 text-center px-9 md:px-12 lg:px-36 pb-6 lg:pb-10 md:text-left text-sm tracking-wider absolute inset-x-0">
       <div className="maxWidthSection">
@@ -32,12 +32,11 @@ export const Footer = () => {
               id="nav"
             >
               {navlist.map((li, index) => (
-                <li
-                  key={index + 1}
-                  className="hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150"
-                >
-                  {li}
-                </li>
+                <Link key={index + 1} href={`/${li}`}>
+                  <li className="hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
+                    {li}
+                  </li>
+                </Link>
               ))}
             </ul>
           </div>
