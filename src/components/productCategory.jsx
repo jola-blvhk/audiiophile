@@ -4,7 +4,6 @@ import { Button } from "./button";
 import headphone from "../../public/assets/categoryImages/mark-2-headphones.svg";
 import Link from "next/link";
 
-
 export const ProductCategory = ({
   nameOfProduct,
   description,
@@ -13,7 +12,7 @@ export const ProductCategory = ({
   key,
   imgURL,
   id,
-  category
+  category,
 }) => {
   return (
     <div className="my-36">
@@ -27,7 +26,7 @@ export const ProductCategory = ({
             alt="headphone"
             width={100}
             height={100}
-            className="w-[90%] h-auto object-contain"
+            className="w-[50%] h-auto object-contain"
           />
         </div>
         <div className=" md:h-auto py-12 rounded-md text-center md:text-left">

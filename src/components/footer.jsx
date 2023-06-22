@@ -20,7 +20,7 @@ export const Footer = () => {
           <div className="grid m-auto md:m-0 gap-12 mb-3">
             <div className=" bg-secondary-brown-100 w-24 h-1 m-auto md:m-0"></div>
             <div className="m-auto md:m-0">
-              <Image src={Logo} className="" />
+              <Image alt="image" src={Logo} className="" />
             </div>
           </div>
           <div className="lg:flex mt-9 lg:mt-0 lg:items-end">
@@ -45,13 +45,25 @@ export const Footer = () => {
           </div>
           <div className="hidden lg:flex justify-between w-32 lg:items-end">
             <div>
-              <Image src={Facebook} className="hover:bg-secondary-brown-100" />
+              <Image
+                alt="image"
+                src={Facebook}
+                className="hover:bg-secondary-brown-100"
+              />
             </div>
             <div>
-              <Image src={Twitter} className="hover:bg-secondary-brown-100" />
+              <Image
+                alt="image"
+                src={Twitter}
+                className="hover:bg-secondary-brown-100"
+              />
             </div>
             <div>
-              <Image src={Instagram} className="hover:bg-secondary-brown-100" />
+              <Image
+                alt="image"
+                src={Instagram}
+                className="hover:bg-secondary-brown-100"
+              />
             </div>
           </div>
         </div>
@@ -61,13 +73,25 @@ export const Footer = () => {
           </div>
           <div className="m-auto md:m-0 flex justify-between lg:hidden w-32 items-end">
             <div>
-              <Image src={Facebook} className="hover:bg-secondary-brown-100" />
+              <Image
+                alt="image"
+                src={Facebook}
+                className="hover:bg-secondary-brown-100"
+              />
             </div>
             <div>
-              <Image src={Twitter} className="hover:bg-secondary-brown-100" />
+              <Image
+                alt="image"
+                src={Twitter}
+                className="hover:bg-secondary-brown-100"
+              />
             </div>
             <div>
-              <Image src={Instagram} className="hover:bg-secondary-brown-100" />
+              <Image
+                alt="image"
+                src={Instagram}
+                className="hover:bg-secondary-brown-100"
+              />
             </div>
           </div>
         </div>

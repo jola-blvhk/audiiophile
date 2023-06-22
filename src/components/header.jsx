@@ -24,7 +24,7 @@ export const Header = () => {
                   setDropNav(!dropNav);
                 }}
               />
-              <Image src={Logo} className="md:hidden" />
+              <Image alt="image" src={Logo} className="md:hidden" />
               <div className="hidden md:flex gap-x-12 lg:gap-x-0 items-center ">
                 <div>
                   <Image
@@ -37,7 +37,7 @@ export const Header = () => {
                 </div>
 
                 <div>
-                  <Image src={Logo} />
+                  <Image alt="image" src={Logo} />
                 </div>
               </div>
               <ul
@@ -53,7 +53,7 @@ export const Header = () => {
                   </Link>
                 ))}
               </ul>
-              <Image src={Cart} />
+              <Image alt="image" src={Cart} />
             </div>
             {dropNav ? (
               <div className="">

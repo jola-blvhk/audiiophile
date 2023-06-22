@@ -36,8 +36,8 @@ const Earphone = () => {
           })}
 
           <div className=" flex flex-col md:flex-row justify-between gap-20 md:gap-12 lg:gap-20 my-32">
-            <ShopProduct name="Earphones" product={Headphones} />
-            <ShopProduct name="Earphones" product={Speaker} />
+            <ShopProduct name="Headphones" product={Headphones} />
+            <ShopProduct name="Speakers" product={Speaker} />
             <ShopProduct name="Earphones" product={Earphoness} />
           </div>
           <BeforeFooter />

@@ -19,7 +19,9 @@ export const Button = ({ text, classname, rounded, type, ...rest }) => {
     ${classname} `}
     >
       {text}
-      {type === "noBorder" && <Image src={arrowRight} />}
+      {type === "noBorder" && (
+        <Image alt="image" src={arrowRight} />
+      )}
     </button>
   );
 };
