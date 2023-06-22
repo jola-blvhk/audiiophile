@@ -75,8 +75,8 @@ export default function Home() {
 
       <div className="px-9 md:px-12 lg:px-36 ">
         <div className="maxWidthSection flex flex-col md:flex-row justify-between gap-20 md:gap-12 lg:gap-20 my-32">
-          <ShopProduct name="Earphones" product={Headphones} />
-          <ShopProduct name="Earphones" product={Speaker} />
+          <ShopProduct name="Headphones" product={Headphones} />
+          <ShopProduct name="Speakers" product={Speaker} />
           <ShopProduct name="Earphones" product={Earphoness} />
         </div>
       </div>
@@ -144,11 +144,13 @@ export default function Home() {
               </h1>
 
               <div className="">
-                <Button
-                  text="see product"
-                  classname="mt-12 text-sm md:text-base bg-transparent border border-primary-black-100 text-primary-black-100  hover:bg-primary-black-100 hover:text-primary-white-100"
-                  type="brown"
-                />
+                <Link href="/earphones/product-detail?id=1">
+                  <Button
+                    text="see product"
+                    classname="mt-12 text-sm md:text-base bg-transparent border border-primary-black-100 text-primary-black-100  hover:bg-primary-black-100 hover:text-primary-white-100"
+                    type="brown"
+                  />
+                </Link>
               </div>
             </div>
           </div>
