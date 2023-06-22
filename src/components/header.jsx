@@ -67,7 +67,13 @@ export const Header = () => {
                   id="nav"
                 >
                   {navlist.map((li, index) => (
-                    <Link key={index + 1} href={`/${li}`}>
+                    <Link
+                      key={index + 1}
+                      onClick={() => {
+                        setDropNav(!dropNav);
+                      }}
+                      href={`/${li}`}
+                    >
                       <li className="mb-12 hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
                         {li}
                       </li>
