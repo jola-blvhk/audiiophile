@@ -1,8 +1,9 @@
 import React from "react";
 import { Button } from "./button";
 import Image from "next/image";
+import Link from "next/link";
 
-export const Others = ({ image, name, key }) => {
+export const Others = ({ image, name, key, link }) => {
   return (
     <div key={key} className="grid place-items-center gap-6  my-8">
       <div
@@ -18,11 +19,13 @@ export const Others = ({ image, name, key }) => {
         />
       </div>
       <h4 className="font-bold text-lg uppercase ">{name}</h4>
-      <Button
-        text="see product"
-        classname=" text-primary-white-100  bg-secondary-brown-100 border-secondary-brown-100 "
-        type="brown"
-      />
+      <Link href={`${link}`}>
+        <Button
+          text="see product"
+          classname=" text-primary-white-100  bg-secondary-brown-100 border-secondary-brown-100 "
+          type="brown"
+        />
+      </Link>
     </div>
   );
 };

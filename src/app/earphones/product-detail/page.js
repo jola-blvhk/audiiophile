@@ -134,6 +134,7 @@ const ProductDetail = () => {
                 key={index + 1}
                 name={info.name}
                 image={info.image.desktop}
+                link={info.slug}
               />
             );
           })}

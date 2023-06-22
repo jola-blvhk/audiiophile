@@ -130,11 +130,13 @@ const ProductDetail = () => {
         </h3>
         <div className="grid md:grid-cols-3 md:gap-5 lg:gap-20">
           {data.others.map((info, index) => {
+            console.log(info.link);
             return (
               <Others
                 key={index + 1}
                 name={info.name}
                 image={info.image.desktop}
+                link={info.slug}
               />
             );
           })}
