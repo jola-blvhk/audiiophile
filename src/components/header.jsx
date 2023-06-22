@@ -18,6 +18,7 @@ export const Header = () => {
           <div className="maxWidthSection">
             <div className="flex items-center justify-between ">
               <Image
+                alt = "image"
                 src={Hamburger}
                 className="md:hidden"
                 onClick={() => {
@@ -28,6 +29,7 @@ export const Header = () => {
               <div className="hidden md:flex gap-x-12 lg:gap-x-0 items-center ">
                 <div>
                   <Image
+                    alt="image"
                     src={Hamburger}
                     className="lg:hidden"
                     onClick={() => {
@@ -44,10 +46,10 @@ export const Header = () => {
                 className=" hidden uppercase text-primary-white-100 lg:flex items-center  space-x-6 "
                 id="nav"
               >
-                {navlist.map((li) => (
+                {navlist.map((li, index) => (
                   <Link href={`/${li}`}>
-                    {" "}
-                    <li className="hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
+            
+                    <li key={index + 1 } className="hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
                       {li}
                     </li>
                   </Link>
@@ -61,9 +63,9 @@ export const Header = () => {
                   className=" lg:hidden uppercase text-primary-white-100 lg:flex absolute top-full bg-primary-black-90 p-5 text-center mx-auto h-[100vh] z-[100000] w-full left-0"
                   id="nav"
                 >
-                  {navlist.map((li) => (
+                  {navlist.map((li, index) => (
                     <Link href={`/${li}`}>
-                      <li className="mb-12 hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
+                      <li key={index + 1 } className="mb-12 hover:text-secondary-brown-100 hover:cursor-pointer transition ease-in-out delay-150">
                         {li}
                       </li>
                     </Link>
