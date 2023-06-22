@@ -92,7 +92,7 @@ export default function Home() {
             </div>
             <div>
               <h1 className="uppercase mt-7 font-bold text-3xl md:text-4xl lg:text-5xl text-primary-white-100">
-                ZX7 SPEAKER
+                ZX9 SPEAKER
               </h1>
               <p className="mt-7  md:text-lg lg:text-xl tracking-wider text-primary-white-100">
                 Upgrade to premium speakers that are phenomenally built to
@@ -115,15 +115,17 @@ export default function Home() {
         lg:bg-[url('/assets/home/desktop/image-speaker-zx7.jpg')]  bg-no-repeat bg-cover p-12 md:p-16 lg:p-24"
           >
             <h1 className="uppercase font-bold text-3xl md:text-4xl lg:text-5xl text-primary-white-100">
-              ZX9 SPEAKER
+              ZX7 SPEAKER
             </h1>
 
             <div className="">
-              <Button
-                text="see product"
-                classname="mt-12 text-sm md:text-base bg-transparent border border-primary-black-100 text-primary-black-100  hover:bg-primary-black-100 hover:text-primary-white-100"
-                type="brown"
-              />
+              <Link href="/speakers/product-detail?id=5">
+                <Button
+                  text="see product"
+                  classname="mt-12 text-sm md:text-base bg-transparent border border-primary-black-100 text-primary-black-100  hover:bg-primary-black-100 hover:text-primary-white-100"
+                  type="brown"
+                />
+              </Link>
             </div>
           </div>
 
