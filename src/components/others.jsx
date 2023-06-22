@@ -2,9 +2,9 @@ import React from "react";
 import { Button } from "./button";
 import Image from "next/image";
 
-export const Others = ({ image, name }) => {
+export const Others = ({ image, name, key }) => {
   return (
-    <div className="grid place-items-center gap-6  my-8">
+    <div key={key} className="grid place-items-center gap-6  my-8">
       <div
         className={`bg-primary-gray-80 grid place-items-center w-full
            `}

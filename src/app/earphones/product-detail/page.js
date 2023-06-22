@@ -81,9 +81,9 @@ const ProductDetail = () => {
           </h3>
 
           <div className="space-y-2">
-            {data.includes.map((info) => {
+            {data.includes.map((info, index) => {
               return (
-                <p className="lg:text-lg">
+                <p key={index + 1} className="lg:text-lg">
                   <span className="mr-4 font-bold text-secondary-brown-100">
                     {info.quantity + "x"}{" "}
                   </span>{" "}
@@ -125,8 +125,14 @@ const ProductDetail = () => {
           You may also like
         </h3>
         <div className="grid md:grid-cols-3 md:gap-5 lg:gap-20">
-          {data.others.map((info) => {
-            return <Others name={info.name} image={info.image.desktop} />;
+          {data.others.map((info, index) => {
+            return (
+              <Others
+                key={index + 1}
+                name={info.name}
+                image={info.image.desktop}
+              />
+            );
           })}
         </div>
       </div>
