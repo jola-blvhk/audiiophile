@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export const Header = () => {
   const [dropNav, setDropNav] = useState(false);
-  const navlist = ["home", "headphones", "speakers", "earphones"];
+  const navlist = ["headphones", "speakers", "earphones"];
   return (
     <>
       <div className="fixed z-[10000] top-0 w-full ">
