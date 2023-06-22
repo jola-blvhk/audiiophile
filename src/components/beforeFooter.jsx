@@ -6,7 +6,7 @@ export const BeforeFooter = () => {
     <div className="grid gap-12 lg:grid-cols-2 mb-24">
       <div
         className=" bg-[url('/assets/shared/mobile/image-best-gear.jpg')] md:bg-[url('/assets/shared/tablet/image-best-gear.jpg')]  
-        lg:bg-[url('/assets/shared/desktop/image-best-gear.jpg')] w-full h-[300px] lg:h-auto bg-no-repeat bg-cover "
+        lg:bg-[url('/assets/shared/desktop/image-best-gear.jpg')] w-full h-[300px] lg:h-auto bg-no-repeat bg-cover lg:order-last"
       ></div>
       <div className="text-center lg:text-left lg:py-10">
         <h2 className="uppercase mt-7 font-bold text-3xl md:text-4xluppercase">
