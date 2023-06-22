@@ -82,7 +82,7 @@ export default function Home() {
       </div>
       <div className="px-9 md:px-12 lg:px-36">
         <section className="  maxWidthSection mb-36 grid gap-20">
-          <div className="bg-[url('/assets/home/desktop/pattern-circles.svg')] bg-no-repeat bg-center bg-secondary-brown-100 pb-9 pt-9 px-9 md:px-20 lg:pb-9 text-center lg:text-left rounded-md lg:flex gap-6 lg:flex-row relative">
+          <div className="bg-[url('/assets/home/desktop/pattern-circles.svg')] bg-no-repeat bg-center bg-secondary-brown-100 pb-9 pt-9 px-9 md:px-20 lg:pb-9 text-center lg:text-left rounded-lglg:flex gap-6 lg:flex-row relative">
             <div className="w-full  ">
               <Image
                 alt="image"

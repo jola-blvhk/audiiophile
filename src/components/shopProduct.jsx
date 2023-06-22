@@ -20,7 +20,7 @@ export const ShopProduct = ({ name, product }) => {
   };
 
   return (
-    <div className=" bg-primary-gray-80 rounded-md  pt-16  grid gap-4 place-items-center w-full pb-5 px-5 text-center relative">
+    <div className=" bg-primary-gray-80 rounded-lg pt-16  grid gap-4 place-items-center w-full pb-5 px-5 text-center relative">
       <div className=" absolute bottom-[70%] ">
         <Image
           alt="image"

@@ -38,7 +38,7 @@ const ProductDetail = () => {
             className="w-[50%] h-auto object-contain"
           />
         </div>
-        <div className=" md:h-auto py-12 rounded-md text-left ">
+        <div className=" md:h-auto py-12 rounded-lgtext-left ">
           <p
             className={`uppercase tracking-[.9rem] text-secondary-brown-100 mb-3 ${
               data.new ? "grid" : "hidden"

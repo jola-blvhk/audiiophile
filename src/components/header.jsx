@@ -2,13 +2,17 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "../../assets/shared/desktop/logo.svg";
-import Cart from "../../assets/shared/desktop/icon-cart.svg";
+import cart from "../../assets/shared/desktop/icon-cart.svg";
+import { Cart } from ".";
 import Hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import Link from "next/link";
+import { Modal } from "./modal";
 
 export const Header = () => {
   const [dropNav, setDropNav] = useState(false);
   const navlist = ["headphones", "speakers", "earphones"];
+  const [showCartModal, setShowCartModal] = useState(false);
+
   return (
     <>
       <div className="fixed z-[10000] top-0 w-full ">
@@ -58,7 +62,11 @@ export const Header = () => {
                   </Link>
                 ))}
               </ul>
-              <Image alt="image" src={Cart} />
+              <Image
+                alt="image"
+                src={cart}
+                onClick={() => setShowCartModal(true)}
+              />
             </div>
             {dropNav ? (
               <div className="">
@@ -85,6 +93,9 @@ export const Header = () => {
           </div>
         </div>
       </div>
+      <Modal show={showCartModal} onClose={() => setShowCartModal(false)}>
+        <Cart />
+      </Modal>
     </>
   );
 };

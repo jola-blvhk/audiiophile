@@ -10,3 +10,4 @@ export * from "./beforeFooter";
 export * from "./banner";
 export * from "./productCategory";
 export * from "./others";
+export * from "./cart"

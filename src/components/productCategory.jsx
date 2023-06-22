@@ -29,7 +29,7 @@ export const ProductCategory = ({
             className="w-[50%] h-auto object-contain"
           />
         </div>
-        <div className=" md:h-auto py-12 rounded-md text-center md:text-left">
+        <div className=" md:h-auto py-12 rounded-lgtext-center md:text-left">
           <h1 className="uppercase font-bold text-3xl md:text-4xl">
             {nameOfProduct}
           </h1>
