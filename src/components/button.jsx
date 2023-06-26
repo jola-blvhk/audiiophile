@@ -8,7 +8,7 @@ export const Button = ({ text, classname, rounded, type, ...rest }) => {
     <button
       className={`flex gap-3 items-center  py-[.8em] px-[2em] uppercase tracking-widest hover:cursor-pointer transition ease-in-out delay-150 font-semibold  ${
         type === "brown" &&
-        "  tracking-widest hover:bg-secondary-peach-90 border hover:border-secondary-peach-90"
+        "  tracking-widest hover:bg-secondary-peach-90 border text-center hover:border-secondary-peach-90"
       } ${
         type === "transparent" &&
         "border-2 border-primary-black-100 text-primary-black-100 hover:text-primary-white-100 hover:bg-primary-black-100 "
@@ -19,9 +19,7 @@ export const Button = ({ text, classname, rounded, type, ...rest }) => {
     ${classname} `}
     >
       {text}
-      {type === "noBorder" && (
-        <Image alt="image" src={arrowRight} />
-      )}
+      {type === "noBorder" && <Image alt="image" src={arrowRight} />}
     </button>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Data from "../../../data.json";
 import {
@@ -18,6 +18,7 @@ import Image from "next/image";
 const ProductDetail = () => {
   const id = useSearchParams().get("id");
 
+  const [number, setNumber] = useState(1);
   const info = Data.filter((info) => {
     return info.id === +id;
   });
@@ -38,7 +39,7 @@ const ProductDetail = () => {
             className="w-[50%] h-auto object-contain"
           />
         </div>
-        <div className=" md:h-auto py-12 rounded-lgtext-left ">
+        <div className=" md:h-auto py-12 rounded-lg text-left ">
           <p
             className={`uppercase tracking-[.9rem] text-secondary-brown-100 mb-3 ${
               data.new ? "grid" : "hidden"
@@ -51,11 +52,20 @@ const ProductDetail = () => {
           </h1>
           <p className="mt-7 lg:text-lg tracking-widest">{data.description}</p>
           <p className="my-12 text-lg md:text-2xl tracking-widest font-bold ">
-            {"$" + data.price}
+            {"$" + data.price * number}
           </p>
           <div className="flex  gap-6  mt-6 ">
             <div>
-              <Counter classname="" />
+              <Counter
+                count={number}
+                onSubtract={() => {
+                  setNumber(number - 1);
+                }}
+                onAdd={() => {
+                  setNumber(number + 1);
+                }}
+                classname=""
+              />
             </div>
             <div>
               <Button

@@ -8,7 +8,7 @@ import Hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import Link from "next/link";
 import { Modal } from "./modal";
 
-export const Header = () => {
+ const Header = () => {
   const [dropNav, setDropNav] = useState(false);
   const navlist = ["headphones", "speakers", "earphones"];
   const [showCartModal, setShowCartModal] = useState(false);
@@ -99,3 +99,4 @@ export const Header = () => {
     </>
   );
 };
+export default Header;

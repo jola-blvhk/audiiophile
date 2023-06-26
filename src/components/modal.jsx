@@ -15,8 +15,6 @@ export const Modal = ({ show, onClose, children }) => {
     }
   };
 
- 
-
   useEffect(() => {
     setIsOpen(show);
   }, [show]);
@@ -24,14 +22,14 @@ export const Modal = ({ show, onClose, children }) => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 z-20 flex items-center justify-center overflow-hidden">
+        <div className="absolute  top-[80px] right-0 z-20 flex lg overflow-hidden">
           <div
-            className="fixed inset-0 bg-gray-300 opacity-50"
+            className="fixed inset-0 bg-gray-900 opacity-50"
             onClick={handleClose}
           ></div>
           <div
             ref={modalRef}
-            className=" p-3 z-20 md:w-4/5 overflow-y-auto max-h-full"
+            className=" p-3 z-20 md:w-full overflow-y-auto max-h-full"
           >
             {children}
           </div>
