@@ -6,7 +6,7 @@ export const CartProducts = ({image, name, price}) => {
   return (
       <div className='flex justify-between gap-12 items-center font-semibold'>
           <div className='flex place-items-center gap-2'>
-              <div className=' bg-primary-gray-100 w-20 h-20 rounded-lg'>
+              <div className=' bg-primary-gray-100 w-16 h-16 md:w-20 md:h-20 rounded-lg'>
                   <Image src={image } />
               </div>
               <div>
@@ -14,7 +14,7 @@ export const CartProducts = ({image, name, price}) => {
                   <p className='text-primary-gray-90'>{"$" + " " + price}</p>
               </div>
           </div>
-          <div><Counter classname="p-2 w-20"/></div>
+          <div><Counter className="px-[0.5rem] w-20"/></div>
     </div>
   )
 }

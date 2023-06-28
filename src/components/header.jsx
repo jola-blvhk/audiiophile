@@ -93,9 +93,11 @@ import { Modal } from "./modal";
           </div>
         </div>
       </div>
-      <Modal show={showCartModal} onClose={() => setShowCartModal(false)}>
-        <Cart />
-      </Modal>
+    
+        <Modal show={showCartModal} onClose={() => setShowCartModal(false)}>
+          <Cart />
+        </Modal>
+      
     </>
   );
 };

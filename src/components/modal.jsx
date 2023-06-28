@@ -22,14 +22,14 @@ export const Modal = ({ show, onClose, children }) => {
   return (
     <>
       {isOpen && (
-        <div className="absolute  top-[80px] right-0 z-20 flex lg overflow-hidden">
+        <div className="fixed inset-0 flex items-center justify-center lg:justify-end lg:items-baseline  bottom-[200px] lg:bottom-0 lg:top-[90px] z-20  maxWidthSection overflow-hidden">
           <div
             className="fixed inset-0 bg-gray-900 opacity-50"
             onClick={handleClose}
           ></div>
           <div
             ref={modalRef}
-            className=" p-3 z-20 md:w-full overflow-y-auto max-h-full"
+            className="z-20 overflow-y-auto max-h-full lg:mx-36 xl:mx-0"
           >
             {children}
           </div>
