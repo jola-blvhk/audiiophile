@@ -104,7 +104,7 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 w-full h-[200px] my-12 maxWidthSection">
+      <div className="grid md:grid-cols-2 gap-12 w-full my-12 maxWidthSection">
         <div className="space-y-12">
           <Image
             alt="image"
@@ -132,7 +132,7 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      <div className="mt-36 maxWidthSection">
+      <div className="mt-36 maxWidthSection ">
         <h3 className="uppercase font-bold text-xl md:text-2xl text-center mb-6">
           You may also like
         </h3>
