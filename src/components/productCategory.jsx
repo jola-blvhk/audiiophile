@@ -9,7 +9,7 @@ export const ProductCategory = ({
   description,
   classname,
   exchange,
-  key,
+  keyy,
   imgURL,
   id,
   category,
