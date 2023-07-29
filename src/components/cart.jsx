@@ -41,6 +41,7 @@ export const Cart = () => {
           {items.map((item, index) => {
             return (
               <CartProducts
+                key={index}
                 name={item.name}
                 price={item.price}
                 image={item.categoryImage}
@@ -53,7 +54,7 @@ export const Cart = () => {
         <div className="grid gap-4">
           <div className="flex justify-between items-center">
             <p className="uppercase text-primary-gray-90 ">Total</p>
-            <p className="font-bold text-lg">{"$" + " " + cartTotal }</p>
+            <p className="font-bold text-lg">{"$" + " " + cartTotal}</p>
           </div>
           <Link href="/checkout">
             <div className="flex justify-center w-full">

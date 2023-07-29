@@ -23,10 +23,10 @@ const HeadPhone = () => {
       <Banner name=" HeadPhones" />
       <div className="px-9 md:px-12 lg:px-36">
         <div className="maxWidthSection">
-          {headPhones.map((headphone) => {
+          {headPhones.map((headphone, index) => {
             return (
               <ProductCategory
-                keyy={headphone.id}
+                keyy={index}
                 nameOfProduct={headphone.name}
                 description={headphone.description}
                 imgURL={headphone.categoryImage}

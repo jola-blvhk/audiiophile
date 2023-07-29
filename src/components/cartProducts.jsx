@@ -1,14 +1,14 @@
 import React from "react";
 import { Counter } from "./counter";
 import Image from "next/image";
-import {
- CiTrash
-  
-} from "react-icons/ci";
+import { CiTrash } from "react-icons/ci";
 
-export const CartProducts = ({ image, name, price, trashClick}) => {
+export const CartProducts = ({ image, name, price, trashClick, keyy }) => {
   return (
-    <div className="flex justify-between gap-12 items-center font-semibold pb-5">
+    <div
+      className="flex justify-between gap-12 items-center font-semibold pb-5"
+      key={keyy}
+    >
       <div className="flex place-items-center gap-2">
         <div className=" bg-primary-gray-100 w-16 h-16 md:w-20 md:h-20 rounded-lg">
           <Image
@@ -26,7 +26,7 @@ export const CartProducts = ({ image, name, price, trashClick}) => {
       </div>
       <div className="flex gap-4 items-center">
         <Counter className="p-[0.5rem] w-20" />
-        <CiTrash className="text-xl font-bold" onClick={() => trashClick()}/>
+        <CiTrash className="text-xl font-bold" onClick={() => trashClick()} />
       </div>
     </div>
   );
