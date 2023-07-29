@@ -3,7 +3,7 @@
 import React, { useContext, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Data from "../../../data.json";
-import { CartContext } from "@/contexts/CartContext";
+
 import {
   BeforeFooter,
   Button,
