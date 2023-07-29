@@ -18,24 +18,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="">
-      {/* <Button text="shop" colour="noBorder" />
-      <TextInput
-        label="Name"
-        // errorMessage="Wrong format"
-        placeholder="Insert your name"
-        inputClass="text-sm"
-      />
-      <RadioInput
-        label="Name"
-        // errorMessage="Wrong format"
-        placeholder="Insert your name"
-      /> 
-      <RadioInput
-        label="Name"
-        // errorMessage="Wrong format"
-        placeholder="Insert your name"
-      /> */}
-
       <section className="bg-[url('/assets/home/desktop/Headphone.svg')] bg-no-repeat bg-center bg-primary-black-90 px-9 md:px-12 lg:px-36 pt-[500px] lg:pt-20 pb-12 relative grid place-content-center lg:bg-none">
         <div className="maxWidthSection">
           <div className="md:flex ">

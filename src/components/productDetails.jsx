@@ -5,6 +5,7 @@ import { Counter } from "./counter";
 import { Button } from "./button";
 import Image from "next/image";
 import { useCart } from "react-use-cart";
+import { toast } from "react-toastify";
 export const ProductDetails = ({
   ImgSrc,
   ImgAlt,
@@ -16,6 +17,15 @@ export const ProductDetails = ({
 }) => {
   const [number, setNumber] = useState(1);
   const { addItem } = useCart();
+
+  const onClick = () =>
+    toast("Added to Cart", {
+      hideProgressBar: true,
+      autoClose: 4000,
+      type: "success",
+      position: "top-right",
+      className: "mt-20 ",
+    });
   return (
     <div className=" grid md:gap-24 md:grid-cols-2 maxWidthSection">
       <div
@@ -61,7 +71,10 @@ export const ProductDetails = ({
               text="add to cart"
               classname=" text-primary-white-100  bg-secondary-brown-100 border-secondary-brown-100 h-full"
               colour="brown"
-              onClick={() => addItem(item)}
+              onClick={() => {
+                addItem(item);
+                onClick();
+              }}
             />
           </div>
         </div>
