@@ -24,15 +24,17 @@ const Speakers = () => {
         <div className="maxWidthSection">
           {headPhones.map((headphone, index) => {
             return (
-              <ProductCategory
-                keyy={index}
-                nameOfProduct={headphone.name}
-                description={headphone.description}
-                imgURL={headphone.categoryImage}
-                exchange={headphone.new}
-                category={headphone.category}
-                id={headphone.id}
-              />
+              <div key={index}>
+                <ProductCategory
+                  keyy={index}
+                  nameOfProduct={headphone.name}
+                  description={headphone.description}
+                  imgURL={headphone.categoryImage}
+                  exchange={headphone.new}
+                  category={headphone.category}
+                  id={headphone.id}
+                />
+              </div>
             );
           })}
 

@@ -25,15 +25,17 @@ const HeadPhone = () => {
         <div className="maxWidthSection">
           {headPhones.map((headphone, index) => {
             return (
-              <ProductCategory
-                keyy={index}
-                nameOfProduct={headphone.name}
-                description={headphone.description}
-                imgURL={headphone.categoryImage}
-                exchange={headphone.new}
-                id={headphone.id}
-                category={headphone.category}
-              />
+              <div key={index}>
+                <ProductCategory
+                  keyy={index}
+                  nameOfProduct={headphone.name}
+                  description={headphone.description}
+                  imgURL={headphone.categoryImage}
+                  exchange={headphone.new}
+                  id={headphone.id}
+                  category={headphone.category}
+                />
+              </div>
             );
           })}
           <div className=" flex flex-col md:flex-row justify-between gap-20 md:gap-12 lg:gap-20 my-32">
