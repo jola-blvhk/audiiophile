@@ -24,7 +24,7 @@ const Earphone = () => {
           {headPhones.map((headphone) => {
             return (
               <ProductCategory
-                key={headphone.id}
+                keyy={headphone.id}
                 nameOfProduct={headphone.name}
                 description={headphone.description}
                 imgURL={headphone.categoryImage}

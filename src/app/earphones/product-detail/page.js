@@ -9,11 +9,13 @@ import {
   Counter,
   ShopProduct,
   Others,
+  ProductDetails,
 } from "@/components";
 import Earphoness from "/assets/home/desktop/shopEarpiece.svg";
 import Headphones from "/assets/home/desktop/shopHeadphone.svg";
 import Speaker from "/assets/home/desktop/shopSpeaker.svg";
 import Image from "next/image";
+import { useCart } from "react-use-cart";
 
 const ProductDetail = () => {
   const id = useSearchParams().get("id");
@@ -22,10 +24,20 @@ const ProductDetail = () => {
     return info.id === +id;
   });
   const data = info[0];
-  console.log();
+
+  const { addItem } = useCart();
   return (
     <div className="my-36 px-9 md:px-12 lg:px-36 tracking-wider">
-      <div className=" grid md:gap-24 md:grid-cols-2 maxWidthSection">
+      <ProductDetails
+        ImgSrc={data.categoryImage}
+        ImgAlt="Earphones"
+        imgNew={data.new}
+        name={data.name}
+        description={data.description}
+        price={data.price}
+        item={data}
+      />
+      {/* <div className=" grid md:gap-24 md:grid-cols-2 maxWidthSection">
         <div
           className={`p-12 md:p-16 bg-primary-gray-80 grid place-items-center w-full
            `}
@@ -70,12 +82,13 @@ const ProductDetail = () => {
               <Button
                 text="add to cart"
                 classname=" text-primary-white-100  bg-secondary-brown-100 border-secondary-brown-100 h-full"
-                type="brown"
+                colour="brown"
+                onClick={() => addItem()}
               />
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="grid gap-12 md:flex maxWidthSection mt-20">
         <div className=" md:w-[60%]">

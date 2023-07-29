@@ -1,7 +1,9 @@
+"use client"
 import "./globals.css";
 import { Manrope } from "next/font/google";
 import { Footer } from "@/components";
-import Header from '../components/header'
+import Header from "../components/header";
+import { CartProvider } from "react-use-cart";
 const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata = {
@@ -12,11 +14,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${manrope.className}`}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <CartProvider>
+        <body className={`${manrope.className}`}>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </CartProvider>
     </html>
   );
 }

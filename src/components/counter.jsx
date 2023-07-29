@@ -10,14 +10,14 @@ export const Counter = ({ className, count, onAdd, onSubtract }) => {
       className={` flex justify-between gap-4 items-center bg-primary-gray-80 align-items p-4 font-semibold ${className}`}
     >
       <div
-        className=" text-primary-gray-90  hover:text-secondary-brown-100 text-2xl font-bold"
+        className=" text-primary-gray-90  hover:text-secondary-brown-100 text-2xl font-bold cursor-pointer"
         onClick={onSubtract}
       >
         -
       </div>
       <div className="text-2xl">{count}</div>
       <div
-        className="text-primary-gray-90 hover:text-secondary-brown-100 text-xl font-bold"
+        className="text-primary-gray-90 hover:text-secondary-brown-100 text-xl font-bold cursor-pointer"
         onClick={onAdd}
       >
         +

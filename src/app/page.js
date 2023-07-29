@@ -18,7 +18,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="">
-      {/* <Button text="shop" type="noBorder" />
+      {/* <Button text="shop" colour="noBorder" />
       <TextInput
         label="Name"
         // errorMessage="Wrong format"
@@ -54,7 +54,7 @@ export default function Home() {
                     <Button
                       text="see product"
                       classname="mt-12 text-primary-white-100  bg-secondary-brown-100 border-secondary-brown-100"
-                      type="brown"
+                      colour="brown"
                     />
                   </Link>
                 </div>
@@ -103,7 +103,7 @@ export default function Home() {
                 <Button
                   text="see product"
                   classname="mt-12 text-sm md:text-base bg-primary-black-90 border border-primary-black-90 text-primary-white-100 hover:border-[#4C4C4C] hover:bg-[#4C4C4C]"
-                  type="brown"
+                  colour="brown"
                 />
               </Link>
             </div>
@@ -123,7 +123,7 @@ export default function Home() {
               <Button
                 text="see product"
                 classname="mt-12 text-sm md:text-base bg-transparent border border-primary-black-100 text-primary-black-100  hover:bg-primary-black-100 hover:text-primary-white-100"
-                type="brown"
+                colour="brown"
               />
             </Link>
           </div>
@@ -148,7 +148,7 @@ export default function Home() {
                 <Button
                   text="see product"
                   classname="mt-12 text-sm md:text-base bg-transparent border border-primary-black-100 text-primary-black-100  hover:bg-primary-black-100 hover:text-primary-white-100"
-                  type="brown"
+                  colour="brown"
                 />
               </Link>
             </div>

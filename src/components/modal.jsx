@@ -22,7 +22,7 @@ export const Modal = ({ show, onClose, children }) => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center lg:justify-end lg:items-baseline  bottom-[200px] lg:bottom-0 lg:top-[90px] z-20  maxWidthSection overflow-hidden">
+        <div className="fixed inset-0 flex items-center justify-center lg:justify-end lg:items-baseline   lg:bottom-0 lg:top-[90px] z-20  maxWidthSection ">
           <div
             className="fixed inset-0 bg-gray-900 opacity-50"
             onClick={handleClose}

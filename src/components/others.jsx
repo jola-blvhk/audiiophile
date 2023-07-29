@@ -23,7 +23,7 @@ export const Others = ({ image, name, key, link }) => {
         <Button
           text="see product"
           classname=" text-primary-white-100  bg-secondary-brown-100 border-secondary-brown-100 "
-          type="brown"
+          colour="brown"
         />
       </Link>
     </div>

@@ -16,7 +16,7 @@ export const ProductCategory = ({
 }) => {
   return (
     <div className="my-36">
-      <div key={key} className=" grid md:gap-24 md:grid-cols-2">
+      <div key={keyy} className=" grid md:gap-24 md:grid-cols-2">
         <div
           className={`p-12 md:p-16 bg-primary-gray-80 grid place-items-center w-full
             ${exchange ? "md:order-last" : " "} lg:p-24  ${classname}`}
@@ -40,7 +40,7 @@ export const ProductCategory = ({
               <Button
                 text="see product"
                 classname="mt-12 text-primary-white-100  bg-secondary-brown-100 border-secondary-brown-100"
-                type="brown"
+                colour="brown"
               />
             </Link>
           </div>
