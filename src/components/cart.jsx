@@ -4,7 +4,6 @@ import React from "react";
 import { Button } from "./button";
 import { CartProducts } from ".";
 import Link from "next/link";
-"use client"
 import { useCart } from "react-use-cart";
 
 export const Cart = () => {
@@ -22,7 +21,7 @@ export const Cart = () => {
   if (isEmpty) return <h1 className="text-center">Your Cart is Empty</h1>;
 
   console.warn(items);
-  
+
   return (
     <div className="maxWidthSection lg:justify-end mt- lg:mt-0 ">
       <div className=" bg-primary-white-100 rounded-lg tracking-wider grid gap-4   p-4 max-w-2xl">
