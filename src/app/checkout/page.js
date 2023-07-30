@@ -137,7 +137,7 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-          <button type="submit">Submit</button>
+          {/* <button type="submit">Submit</button> */}
           {/* <Button colour="brown" type="submit" text="submit" /> */}
         </form>
         <div className="grid gap-5  bg-primary-white-100 rounded-lg p-9 col-span-2 h-fit">
