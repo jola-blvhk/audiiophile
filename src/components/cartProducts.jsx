@@ -6,7 +6,7 @@ import Image from "next/image";
 import { CiTrash } from "react-icons/ci";
 import { useCart } from "react-use-cart";
 
-export const CartProducts = ({ image, name, price, trashClick, keyy, item }) => {
+export const CartProducts = ({ image, name, price, trashClick, keyy, item, type = "cart", itemQuantity}) => {
   const { updateItemQuantity } = useCart();
   const [number, setNumber] = useState(item.quantity);
   return (
@@ -29,7 +29,7 @@ export const CartProducts = ({ image, name, price, trashClick, keyy, item }) => 
           <p className="text-primary-gray-90">{"$" + " " + price * item.quantity}</p>
         </div>
       </div>
-      <div className="flex gap-4 items-center">
+      {type === "cart" ? ( <div className="flex gap-4 items-center">
         <Counter
           className="p-[0.5rem] w-20"
           count={number}
@@ -43,7 +43,8 @@ export const CartProducts = ({ image, name, price, trashClick, keyy, item }) => 
           }}
         />
         <CiTrash className="text-xl font-bold" onClick={() => trashClick()} />
-      </div>
+      </div>) : (<p>{ "x" + itemQuantity }</p>)}
+     
     </div>
   );
 };

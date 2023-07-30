@@ -1,10 +1,12 @@
 "use client";
 
-import { Button, RadioInput, TextInput } from "@/components";
+import { Button, CartProducts, RadioInput, TextInput } from "@/components";
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useCart } from "react-use-cart";
+import Link from "next/link";
 
 const Checkout = () => {
   const schema = yup.object().shape({
@@ -18,10 +20,24 @@ const Checkout = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  const {
+    isEmpty,
+    totalUniqueItems,
+    items,
+    totalItems,
+    cartTotal,
+    updateItemQuantity,
+    removeItem,
+    emptyCart,
+  } = useCart();
+  const shippingAmount = 50;
+  const vatAmount = 1079;
+  const grandTotal = cartTotal + shippingAmount + vatAmount;
   return (
     <div className=" px-9 md:px-12 lg:px-36 ">
-      <div className="maxWidthSection  my-36 tracking-widest ">
-        <form onSubmit={handleSubmit}>
+      <div className="maxWidthSection  my-36 tracking-widest space-y-8 xl:space-y-0 xl:grid xl:grid-cols-5  xl:gap-10">
+        <form onSubmit={handleSubmit} className=" col-span-3">
           <div className=" bg-primary-white-100 rounded-lg p-9 grid gap-10">
             <h1 className="font-semibold text-2xl">CHECKOUT</h1>
             <div className="">
@@ -36,7 +52,7 @@ const Checkout = () => {
                   inputClass="text-sm"
                   {...register("name")}
                 />
-             
+
                 <TextInput
                   label="Email Address"
                   errorMessage={errors.email?.message}
@@ -124,7 +140,49 @@ const Checkout = () => {
           <button type="submit">Submit</button>
           {/* <Button colour="brown" type="submit" text="submit" /> */}
         </form>
-        <div></div>
+        <div className="grid gap-5  bg-primary-white-100 rounded-lg p-9 col-span-2 h-fit">
+          <h1 className="font-semibold  text-2xl">SUMMARY</h1>
+          <div>
+            {items.map((item, index) => {
+              return (
+                <CartProducts
+                  type="summary"
+                  key={index}
+                  name={item.name}
+                  price={item.price}
+                  image={item.categoryImage}
+                  trashClick={() => removeItem(item.id)}
+                  item={item}
+                  itemQuantity={item.quantity}
+                />
+              );
+            })}
+          </div>
+          <div className="flex justify-between items-center">
+            <p className="uppercase text-primary-gray-90 ">Total</p>
+            <p className="font-bold text-lg">{"$" + " " + cartTotal}</p>
+          </div>
+          <div className="flex justify-between items-center">
+            <p className="uppercase text-primary-gray-90 ">Shipping</p>
+            <p className="font-bold text-lg">{"$" + " " + shippingAmount}</p>
+          </div>
+          <div className="flex justify-between items-center">
+            <p className="uppercase text-primary-gray-90 ">VAT (INCLUDED)</p>
+            <p className="font-bold text-lg">{"$" + " " + vatAmount}</p>
+          </div>
+          <div className="flex justify-between items-center mt-6">
+            <p className="uppercase text-primary-gray-90 ">Grand Total</p>
+            <p className="font-bold text-lg text-secondary-brown-100 ">{`$  ${grandTotal}`}</p>
+          </div>
+          <Link href="/pay">
+            <div className="flex justify-center w-full">
+              <Button
+                text="Continue & Pay"
+                classname=" text-primary-white-100  bg-secondary-brown-100  text-center flex items-center justify-center w-full "
+              />
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   );
