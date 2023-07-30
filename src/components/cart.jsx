@@ -22,7 +22,7 @@ export const Cart = () => {
     return (
       <div className="text-center bg-primary-white-100 rounded-lg p-4 flex gap-4 items-center ">
         <span>
-          <BsFillCartFill className=" text-3xl text-secondary-brown-100"/>
+          <BsFillCartFill className=" text-3xl text-secondary-brown-100" />
         </span>
         <p className="text-xl font-semibold"> Your Cart is Empty</p>
       </div>
@@ -63,8 +63,10 @@ export const Cart = () => {
 
         <div className="grid gap-4">
           <div className="flex justify-between items-center">
-            <p className="uppercase text-primary-gray-90 ">Total</p>
-            <p className="font-bold text-lg">{"$" + " " + cartTotal}</p>
+            <p className="uppercase font-bold text-primary-gray-90 ">Total</p>
+            <p className="font-bold text-lg text-primary-black-100 opacity-100">
+              {"$" + " " + cartTotal}
+            </p>
           </div>
           <Link href="/checkout">
             <div className="flex justify-center w-full">

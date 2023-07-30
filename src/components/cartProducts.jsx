@@ -26,7 +26,7 @@ export const CartProducts = ({ image, name, price, trashClick, keyy, item, type 
         </div>
         <div>
           <h4 className="">{name}</h4>
-          <p className="text-primary-gray-90">{"$" + " " + price * item.quantity}</p>
+          <p className="text-primary-gray-90 font-bold">{"$" + " " + price * item.quantity}</p>
         </div>
       </div>
       {type === "cart" ? ( <div className="flex gap-4 items-center">
