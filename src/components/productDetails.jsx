@@ -29,7 +29,7 @@ export const ProductDetails = ({
   return (
     <div className=" grid md:gap-24 md:grid-cols-2 maxWidthSection">
       <div
-        className={`p-12 md:p-16 bg-primary-gray-80 grid place-items-center w-full
+        className={`p-12 md:p-16 bg-primary-gray-80 rounded-lg grid place-items-center w-full
            `}
       >
         <Image
