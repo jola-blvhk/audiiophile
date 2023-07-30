@@ -50,7 +50,7 @@ export const ProductDetails = ({
         </p>
         <h1 className="uppercase font-bold text-2xl md:text-4xl">{name}</h1>
         <p className="mt-7 lg:text-lg tracking-widest">{description}</p>
-        <p className="my-12 text-lg md:text-2xl tracking-widest font-bold ">
+        <p className="my-12 text-lg md:text-2xl tracking-widest font-bold text-primary-black-100 opacity-100">
           {"$" + price * number}
         </p>
         <div className="flex  gap-6  mt-6 ">

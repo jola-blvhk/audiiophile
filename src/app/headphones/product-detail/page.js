@@ -104,7 +104,7 @@ const ProductDetail = () => {
             {data.includes.map((info, index) => {
               return (
                 <p key={index + 1} className="lg:text-lg">
-                  <span className="mr-4 font-bold text-secondary-brown-100">
+                  <span className="mr-4 font-bold text-secondary-brown-100 opacity-100">
                     {info.quantity + "x"}{" "}
                   </span>{" "}
                   {info.item}

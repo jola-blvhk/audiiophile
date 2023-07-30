@@ -32,7 +32,7 @@ export const ShopProduct = ({ name, product }) => {
         {name}
       </h4>
       <Link href={linkChecker()}>
-        <Button classname=" " text="shop" colour="noBorder" />
+        <Button classname="text-primary-black-100 opacity-80 " text="shop" colour="noBorder" />
       </Link>
     </div>
   );

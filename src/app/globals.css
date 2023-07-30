@@ -29,8 +29,7 @@ body {
     rgb(var(--background-start-rgb)); */;
 }
 p {
-  color: #000;
-  opacity: 0.5;
+  color: #808080;
 }
 
 @layer components {
