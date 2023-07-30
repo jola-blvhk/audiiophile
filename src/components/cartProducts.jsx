@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react";
 import { Counter } from "./counter";
 import Image from "next/image";

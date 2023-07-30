@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "./button";
 import { CartProducts } from ".";
 import Link from "next/link";
+"use client"
 import { useCart } from "react-use-cart";
 
 export const Cart = () => {
