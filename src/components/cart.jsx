@@ -26,11 +26,12 @@ export const Cart = () => {
     <div className="maxWidthSection lg:justify-end mt- lg:mt-0 ">
       <div className=" bg-primary-white-100 rounded-lg tracking-wider grid gap-4   p-4 max-w-2xl">
         <div className="flex justify-between">
-          <h1>Cart ({totalUniqueItems})</h1>
+          <h1 className="font-bold">Cart ({totalUniqueItems})</h1>
           <p
             onClick={() => {
               emptyCart();
             }}
+            className=" text-red-600 border-b border-red-600 font-semibold"
           >
             Remove all
           </p>

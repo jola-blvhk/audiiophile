@@ -11,7 +11,7 @@ export const CartProducts = ({ image, name, price, trashClick, keyy, item }) => 
   const [number, setNumber] = useState(item.quantity);
   return (
     <div
-      className="flex justify-between gap-12 items-center font-semibold pb-5"
+      className="flex justify-between gap-12 items-center font-semibold pb-8"
       key={keyy}
     >
       <div className="flex place-items-center gap-2">
