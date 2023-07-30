@@ -52,7 +52,7 @@ const Faq = () => {
       autoClose: 4000,
       type: "success",
       position: "top-right",
-      className: 'mt-12 '
+      className: "mt-12 ",
     });
   return (
     <div>
@@ -61,8 +61,8 @@ const Faq = () => {
         className="mt-48 border border-red-400 text-black"
         onClick={onClick}
         text="Click me"
-    />
-       
+      />
+
       <div className="p-3 border-b-[.08rem] border-gray-300 md:w-[750px]">
         <div className="text-[#008080] mb-6">Frequently Asked Questions</div>
         {/* <h1 className="font-bold">Have any Questions?</h1> */}

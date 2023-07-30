@@ -32,6 +32,7 @@ const Earphone = () => {
                   exchange={headphone.new}
                   category={headphone.category}
                   id={headphone.id}
+                 
                 />
               </div>
             );

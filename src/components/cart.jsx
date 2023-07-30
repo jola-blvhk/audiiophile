@@ -21,7 +21,7 @@ export const Cart = () => {
   if (isEmpty) return <h1 className="text-center">Your Cart is Empty</h1>;
 
   console.warn(items);
-  console.log(items);
+  
   return (
     <div className="maxWidthSection lg:justify-end mt- lg:mt-0 ">
       <div className=" bg-primary-white-100 rounded-lg tracking-wider grid gap-4   p-4 max-w-2xl">
@@ -46,6 +46,7 @@ export const Cart = () => {
                 price={item.price}
                 image={item.categoryImage}
                 trashClick={() => removeItem(item.id)}
+                item={item}
               />
             );
           })}

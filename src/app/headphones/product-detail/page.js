@@ -19,7 +19,7 @@ import Image from "next/image";
 const ProductDetail = () => {
   const id = useSearchParams().get("id");
 
-  const [number, setNumber] = useState(1);
+
   const info = Data.filter((info) => {
     return info.id === +id;
   });

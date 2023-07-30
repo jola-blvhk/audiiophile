@@ -15,8 +15,8 @@ export const ProductDetails = ({
   price,
   item,
 }) => {
+  const { addItem, updateItemQuantity, totalItems } = useCart();
   const [number, setNumber] = useState(1);
-  const { addItem } = useCart();
 
   const onClick = () =>
     toast("Added to Cart", {
@@ -59,9 +59,11 @@ export const ProductDetails = ({
               count={number}
               onSubtract={() => {
                 setNumber(number - 1);
+                // updateItemQuantity(item.id, item.quantity - 1);
               }}
               onAdd={() => {
                 setNumber(number + 1);
+                // updateItemQuantity(item.id, item.quantity + 1);
               }}
               classname=""
             />
@@ -72,7 +74,7 @@ export const ProductDetails = ({
               classname=" text-primary-white-100  bg-secondary-brown-100 border-secondary-brown-100 h-full"
               colour="brown"
               onClick={() => {
-                addItem(item);
+                addItem(item, number);
                 onClick();
               }}
             />
