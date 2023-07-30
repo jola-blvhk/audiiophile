@@ -16,8 +16,10 @@ import Headphones from "/assets/home/desktop/shopHeadphone.svg";
 import Speaker from "/assets/home/desktop/shopSpeaker.svg";
 import Image from "next/image";
 import { useCart } from "react-use-cart";
+import { useRouter } from "next/navigation";
 
 const ProductDetail = () => {
+  const router = useRouter();
   const id = useSearchParams().get("id");
   const [number, setNumber] = useState(1);
   const info = Data.filter((info) => {
@@ -28,6 +30,9 @@ const ProductDetail = () => {
   const { addItem } = useCart();
   return (
     <div className="my-36 px-9 md:px-12 lg:px-36 tracking-wider">
+      <p className="font-bold mb-10 maxWidthSection underline " onClick={() => router.back()}>
+        Go Back
+      </p>
       <ProductDetails
         ImgSrc={data.categoryImage}
         ImgAlt="Earphones"

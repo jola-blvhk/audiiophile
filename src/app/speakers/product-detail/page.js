@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useContext, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Data from "../../../data.json";
 
 import {
@@ -20,6 +20,7 @@ import Image from "next/image";
 
 
 const ProductDetail = () => {
+  const router = useRouter();
   const id = useSearchParams().get("id");
 
   const [number, setNumber] = useState(1);
@@ -31,6 +32,12 @@ const ProductDetail = () => {
 
   return (
     <div className="my-36 px-9 md:px-12 lg:px-36 tracking-wider">
+      <p
+        className="font-bold mb-10 maxWidthSection underline "
+        onClick={() => router.back()}
+      >
+        Go Back
+      </p>
       <ProductDetails
         ImgSrc={data.categoryImage}
         ImgAlt="Earphones"
