@@ -93,7 +93,7 @@ const ProductDetail = () => {
           <h3 className="uppercase font-bold text-xl md:text-2xl mb-4">
             Features
           </h3>
-          <p className="lg:text-lg">{data.features}</p>
+          <p className="lg:text-lg whitespace-pre-line">{data.features}</p>
         </div>
         <div>
           <h3 className="uppercase font-bold text-xl md:text-2xl mb-4">
