@@ -5,7 +5,7 @@ import { Button } from "./button";
 import { CartProducts } from ".";
 import Link from "next/link";
 import { useCart } from "react-use-cart";
-
+import { BsFillCartFill } from "react-icons/bs";
 export const Cart = () => {
   const {
     isEmpty,
@@ -18,7 +18,15 @@ export const Cart = () => {
     emptyCart,
   } = useCart();
 
-  if (isEmpty) return <h1 className="text-center">Your Cart is Empty</h1>;
+  if (isEmpty)
+    return (
+      <div className="text-center bg-primary-white-100 rounded-lg p-4 flex gap-4 items-center ">
+        <span>
+          <BsFillCartFill className=" text-3xl text-secondary-brown-100"/>
+        </span>
+        <p className="text-xl font-semibold"> Your Cart is Empty</p>
+      </div>
+    );
 
   console.warn(items);
 

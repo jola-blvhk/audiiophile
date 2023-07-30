@@ -28,8 +28,10 @@ body {
     )
     rgb(var(--background-start-rgb)); */;
 }
-
-
+p {
+  color: #000;
+  opacity: 0.5;
+}
 
 @layer components {
   .maxWidthSection {
