@@ -7,12 +7,13 @@ import { Cart } from ".";
 import Hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import Link from "next/link";
 import { Modal } from "./modal";
-
- const Header = () => {
+import { useCart } from "react-use-cart";
+const Header = () => {
   const [dropNav, setDropNav] = useState(false);
   const navlist = ["headphones", "speakers", "earphones"];
   const [showCartModal, setShowCartModal] = useState(false);
 
+  const { totalUniqueItems } = useCart();
   return (
     <>
       <div className="fixed z-[10000] top-0 w-full ">
@@ -62,12 +63,21 @@ import { Modal } from "./modal";
                   </Link>
                 ))}
               </ul>
-              <Image
-                alt="image"
-                src={cart}
-                onClick={() => setShowCartModal(true)}
-              />
+              <div
+                className="relative flex cursor-pointer"
+                onClick={() => setShowCartModal(!showCartModal)}
+              >
+                <span
+                  className={`absolute text-sm flex items-center justify-center top-0 -right-1 border border-secondary-red-100 bg-secondary-red-100 w-4 h-4 rounded-full right text-white ${
+                    totalUniqueItems === 0 && "hidden"
+                  }`}
+                >
+                  {totalUniqueItems}
+                </span>
+                <Image alt="image" src={cart} width={30} height={30} />
+              </div>
             </div>
+
             {dropNav ? (
               <div className="">
                 <ul
@@ -93,11 +103,10 @@ import { Modal } from "./modal";
           </div>
         </div>
       </div>
-    
-        <Modal show={showCartModal} onClose={() => setShowCartModal(false)}>
-          <Cart />
-        </Modal>
-      
+
+      <Modal show={showCartModal} onClose={() => setShowCartModal(false)}>
+        <Cart />
+      </Modal>
     </>
   );
 };
