@@ -6,7 +6,7 @@ import { CartProducts } from ".";
 import Link from "next/link";
 import { useCart } from "react-use-cart";
 import { BsFillCartFill } from "react-icons/bs";
-export const Cart = () => {
+export const Cart = ({ handleCancelClick }) => {
   const {
     isEmpty,
     totalUniqueItems,
@@ -68,11 +68,12 @@ export const Cart = () => {
               {"$" + " " + cartTotal}
             </p>
           </div>
-          <Link href="/checkout">
+          <Link href="/checkout ">
             <div className="flex justify-center w-full">
               <Button
                 text="Checkout"
                 classname=" text-primary-white-100  bg-secondary-brown-100  text-center flex items-center justify-center w-full "
+                onClick={handleCancelClick}
               />
             </div>
           </Link>
