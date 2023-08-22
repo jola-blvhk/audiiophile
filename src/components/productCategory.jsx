@@ -18,19 +18,23 @@ export const ProductCategory = ({
     <div className="my-36">
       <div key={keyy} className=" grid md:gap-24 md:grid-cols-2">
         <div
-          className={`p-12 md:p-16 bg-primary-gray-80 grid place-items-center w-full
-            ${exchange ? "md:order-last" : " "} lg:p-24  ${classname}`}
+          className={`p-12 md:p-16 bg-primary-gray-80  w-full
+            ${
+              exchange ? "md:order-last" : " "
+            } lg:p-24 rounded-lg  ${classname}`}
         >
-          <Image
-            src={imgURL}
-            alt="headphone"
-            width={100}
-            height={100}
-            className="w-[50%] h-auto object-contain"
-          />
+          <div className="relative grid  place-items-center">
+            <Image
+              src={imgURL}
+              alt="headphone"
+              width={100}
+              height={100}
+              className=" w-[60%] sm:w-[40%] md:w-[70%] h-auto object-contain"
+            />
+          </div>
         </div>
-        <div className=" md:h-auto py-12 rounded-lgtext-center md:text-left">
-          <h1 className="uppercase font-bold text-3xl md:text-4xl">
+        <div className=" md:h-auto py-12 rounded-lg text-center md:text-left">
+          <h1 className="uppercase font-bold text-2xl md:text-3xl">
             {nameOfProduct}
           </h1>
           <p className="mt-7 lg:text-lg tracking-widest">{description}</p>

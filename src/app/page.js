@@ -1,3 +1,4 @@
+"use client"
 import {
   Button,
   TextInput,
@@ -14,11 +15,14 @@ import Speaker from "../../public/assets/home/desktop/shopSpeaker.svg";
 
 import Image from "next/image";
 import Link from "next/link";
-
-export default function Home() {
+export default async function Home() {
   return (
     <main className="">
       <section className="bg-[url('/assets/home/desktop/Headphone.svg')] bg-no-repeat bg-center bg-primary-black-90 px-9 md:px-12 lg:px-36 pt-[500px] lg:pt-20 pb-12 relative grid place-content-center lg:bg-none">
+        {/* <div className="text-white">
+          <pre>{JSON.stringify(session)}</pre>
+          <User />
+        </div> */}
         <div className="maxWidthSection">
           <div className="md:flex ">
             <div className="maxWidthSection md:w-1/2 ">

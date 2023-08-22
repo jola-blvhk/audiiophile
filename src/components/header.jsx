@@ -5,10 +5,11 @@ import Logo from "../../assets/shared/desktop/logo.svg";
 import cart from "../../assets/shared/desktop/icon-cart.svg";
 import { Cart } from ".";
 import Hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
+import { VscAccount } from "react-icons/vsc";
 import Link from "next/link";
 import { Modal } from "./modal";
 import { useCart } from "react-use-cart";
-const Header = () => {
+const Header = ({currentUser}) => {
   const [dropNav, setDropNav] = useState(false);
   const navlist = ["headphones", "speakers", "earphones"];
   const [showCartModal, setShowCartModal] = useState(false);
@@ -63,18 +64,25 @@ const Header = () => {
                   </Link>
                 ))}
               </ul>
-              <div
-                className="relative flex cursor-pointer"
-                onClick={() => setShowCartModal(!showCartModal)}
-              >
-                <span
-                  className={`absolute text-sm flex items-center justify-center top-0 -right-1 border border-secondary-red-100 bg-secondary-red-100 w-4 h-4 rounded-full right text-white ${
-                    totalUniqueItems === 0 && "hidden"
-                  }`}
+              <div className="flex gap-3 items-center">
+                <div>
+                  <Link href="/signin">
+                    <VscAccount className="text-primary-white-100 text-2xl" />
+                  </Link>
+                </div>
+                <div
+                  className="relative flex cursor-pointer"
+                  onClick={() => setShowCartModal(!showCartModal)}
                 >
-                  {totalUniqueItems}
-                </span>
-                <Image alt="image" src={cart} width={30} height={30} />
+                  <span
+                    className={`absolute text-sm flex items-center justify-center top-0 -right-1 border border-secondary-red-100 bg-secondary-red-100 w-4 h-4 rounded-full right text-white ${
+                      totalUniqueItems === 0 && "hidden"
+                    }`}
+                  >
+                    {totalUniqueItems}
+                  </span>
+                  <Image alt="image" src={cart} width={25} height={25} />
+                </div>
               </div>
             </div>
 
@@ -105,7 +113,7 @@ const Header = () => {
       </div>
 
       <Modal show={showCartModal} onClose={() => setShowCartModal(false)}>
-        <Cart handleCancelClick={() => setShowCartModal(false)}/>
+        <Cart handleCancelClick={() => setShowCartModal(false)} />
       </Modal>
     </>
   );

@@ -7,17 +7,12 @@ export const TextInput = forwardRef(
   ) => {
     return (
       <div className="w-full relative font-semibold">
-        <label
-          htmlFor={name}
-          className={`mb-1 block text-sm ${
-            errorMessage && "text-secondary-red-100 "
-          }`}
-        >
+        <label htmlFor={name} className={`mb-1 block text-sm `}>
           {label}
         </label>
         <div className=" items-center relative">
           <span
-            className={`invalid-feedback absolute bottom-12 right-0 float-right text-sm ${
+            className={`invalid-feedback absolute bottom-12 right-0 float-right text-xs mb-2 ${
               errorMessage && "text-secondary-red-100"
             }`}
           >
