@@ -1,15 +1,10 @@
 import React, { forwardRef } from "react";
 
 export const TextInput = forwardRef(
-  ({
-    name,
-    label,
-    prefix,
-    type = "text",
-    inputClass,
-    errorMessage,
-    ...rest
-  }) => {
+  (
+    { name, label, prefix, type = "text", inputClass, errorMessage, ...rest },
+    ref
+  ) => {
     return (
       <div className="w-full relative font-semibold">
         <label
@@ -31,6 +26,7 @@ export const TextInput = forwardRef(
           <input
             {...rest}
             name={name}
+            ref={ref}
             type={type}
             className={`border rounded-lg focus:outline-none p-4 w-full placeholder:pl-3 border-[#E5E6F2] ${inputClass} ${
               errorMessage && " border-secondary-red-100 "
