@@ -12,3 +12,4 @@ export * from "./others";
 export * from "./cart";
 export * from "./cartProducts";
 export * from "./productDetails";
+

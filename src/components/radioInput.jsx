@@ -22,7 +22,7 @@ export const RadioInput = forwardRef(
           ref={ref}
           type={type}
           placeholder={placeholder}
-          className={` border border-red-600 ${inputClass} accent-secondary-brown-100 w-4 h-4`}
+          className={`${errorMessage && "border border-red-600"}  ${inputClass} accent-secondary-brown-100 w-4 h-4`}
         />
         <label htmlFor={name} className={`pl-3 inline text-sm $`}>
           {label}

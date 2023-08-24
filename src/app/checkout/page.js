@@ -1,17 +1,32 @@
 "use client";
 
-import { Button, CartProducts, RadioInput, TextInput } from "@/components";
+import {
+  Button,
+  CartProducts,
+  PaystackIntegration,
+  RadioInput,
+  TextInput,
+} from "@/components";
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useCart } from "react-use-cart";
 import Link from "next/link";
-
+import PaystackPop from "@paystack/inline-js";
 const Checkout = () => {
   const schema = yup.object().shape({
-    name: yup.string().required("Name is Required"),
-    email: yup.string().required("Email is Required"),
+    name: yup.string().required("Name is required"),
+    email: yup.string().required("Email is required"),
+    phone_number: yup.string().required("Required"),
+    address: yup.string().required("Address is is required"),
+    zipCode: yup.string().required("Zip Code is required"),
+    city: yup.string().required("City is required"),
+    country: yup.string().required("Country is required"),
+    paymentMethod: yup
+      .string()
+      .oneOf(["eMoney", "cash"])
+      .required("Please select a payment method"),
   });
   const {
     register,
@@ -34,12 +49,32 @@ const Checkout = () => {
   const shippingAmount = 50;
   const vatAmount = 1079;
   const grandTotal = cartTotal + shippingAmount + vatAmount;
+
+  const paystack = new PaystackPop();
+
+  const paystackTest = (data) => {
+    paystack?.newTransaction({
+      key: "pk_test_abcfefe9fdc9e5d5a70d2ad0bee3fe2390ce12dd",
+      amount: grandTotal * 80000,
+      email: data.email,
+      firstname: "oluremi",
+    });
+  };
+
+  const onSubmitHandler = (data) => {
+   
+    paystackTest(data);
+  };
+
   return (
     <div className=" px-9 md:px-12 lg:px-36 ">
-      <div className="maxWidthSection  my-36 tracking-widest space-y-8 xl:space-y-0 xl:grid xl:grid-cols-5  xl:gap-10">
-        <form onSubmit={handleSubmit} className=" col-span-3">
-          <div className=" bg-primary-white-100 rounded-lg p-9 grid gap-10">
-            <h1 className="font-semibold text-2xl">CHECKOUT</h1>
+      <form
+        onSubmit={handleSubmit(onSubmitHandler)}
+        className="maxWidthSection  my-36 tracking-widest space-y-8 xl:space-y-0 xl:grid xl:grid-cols-5  xl:gap-10"
+      >
+        <div className=" col-span-3">
+          <div className=" bg-primary-white-100 rounded-lg p-4 md:p-9 grid gap-10">
+            <h1 className="font-semibold text-xl md:text-2xl">CHECKOUT</h1>
             <div className="">
               <h3 className=" text-secondary-brown-100 mb-4 font-semibold">
                 BILLING DETAILS
@@ -47,6 +82,7 @@ const Checkout = () => {
               <div className="grid gap-8 md:grid-cols-2">
                 <TextInput
                   label="Name"
+                  name="name"
                   errorMessage={errors.name?.message}
                   placeholder="Insert your name"
                   inputClass="text-sm"
@@ -62,9 +98,11 @@ const Checkout = () => {
                 />
                 <TextInput
                   label="Phone Number"
-                  // errorMessage="Wrong format"
+                  name="phone_number"
+                  errorMessage={errors.phone_number?.message}
                   placeholder="+1 202-555-0136"
                   inputClass="text-sm"
+                  {...register("phone_number")}
                 />
               </div>
             </div>
@@ -76,29 +114,33 @@ const Checkout = () => {
                 <div>
                   <TextInput
                     label="Your Address"
-                    // errorMessage="Wrong format"
+                    errorMessage={errors.address?.message}
                     placeholder="1137 Williams Avenue"
                     inputClass="text-sm "
+                    {...register("address")}
                   />
                 </div>
                 <div className="grid gap-8 md:grid-cols-2">
                   <TextInput
                     label="ZIP Code"
-                    // errorMessage="Wrong format"
+                    errorMessage={errors.zipCode?.message}
                     placeholder="10001"
                     inputClass="text-sm"
+                    {...register("zipCode")}
                   />
                   <TextInput
                     label="City"
-                    // errorMessage="Wrong format"
+                    errorMessage={errors?.city?.message}
                     placeholder="New York"
                     inputClass="text-sm"
+                    {...register("city")}
                   />
                   <TextInput
                     label="Country"
-                    // errorMessage="Wrong format"
+                    errorMessage={errors.country?.message}
                     placeholder="United States"
                     inputClass="text-sm"
+                    {...register("country")}
                   />
                 </div>
               </div>
@@ -109,18 +151,25 @@ const Checkout = () => {
               </h3>
               <div className="grid gap-8 ">
                 <div>
+                  {errors.paymentMethod && (
+                    <p className="text-red-600 text-xs ">
+                      {errors.paymentMethod.message}
+                    </p>
+                  )}
                   <RadioInput
                     label="e-Money"
-                    // errorMessage="Wrong format"
-                    placeholder="Insert your name"
+                    name="paymentMethod"
+                    value="eMoney"
+                    {...register("paymentMethod", { required: true })}
                   />
                   <RadioInput
                     label="Cash on Delivery"
-                    // errorMessage="Wrong format"
-                    placeholder="Insert your name"
+                    name="paymentMethod"
+                    value="cash"
+                    {...register("paymentMethod", { required: true })}
                   />
                 </div>
-                <div className="grid gap-8 md:grid-cols-2">
+                {/* <div className="grid gap-8 md:grid-cols-2">
                   <TextInput
                     label="e-Money Number"
                     // errorMessage="Wrong format"
@@ -133,15 +182,15 @@ const Checkout = () => {
                     placeholder="6891"
                     inputClass="text-sm"
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
           {/* <button type="submit">Submit</button> */}
           {/* <Button colour="brown" type="submit" text="submit" /> */}
-        </form>
-        <div className="grid gap-5  bg-primary-white-100 rounded-lg p-9 col-span-2 h-fit">
-          <h1 className="font-semibold  text-2xl">SUMMARY</h1>
+        </div>
+        <div className="grid gap-5  bg-primary-white-100 rounded-lg p-4 md:p-9 col-span-2 h-fit">
+          <h1 className="font-semibold text-xl  md:text-2xl">SUMMARY</h1>
           <div>
             {items.map((item, index) => {
               return (
@@ -174,16 +223,15 @@ const Checkout = () => {
             <p className="uppercase text-primary-gray-90 ">Grand Total</p>
             <p className="font-bold text-lg text-secondary-brown-100 ">{`$  ${grandTotal}`}</p>
           </div>
-          <Link href="/pay">
-            <div className="flex justify-center w-full">
-              <Button
-                text="Continue & Pay"
-                classname=" text-primary-white-100  bg-secondary-brown-100  text-center flex items-center justify-center w-full "
-              />
-            </div>
-          </Link>
+
+          <div className="flex justify-center w-full">
+            <Button
+              text="Continue & Pay"
+              classname=" text-primary-white-100  bg-secondary-brown-100  text-center flex items-center justify-center w-full "
+            />
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

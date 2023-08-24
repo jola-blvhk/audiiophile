@@ -1,10 +1,15 @@
 import React, { forwardRef } from "react";
 
 export const TextInput = forwardRef(
-  (
-    { name, label, prefix, type = "text", inputClass, errorMessage, ...rest },
-    ref
-  ) => {
+  ({
+    name,
+    label,
+    prefix,
+    type = "text",
+    inputClass,
+    errorMessage,
+    ...rest
+  }) => {
     return (
       <div className="w-full relative font-semibold">
         <label
@@ -17,8 +22,8 @@ export const TextInput = forwardRef(
         </label>
         <div className=" items-center relative">
           <span
-            className={`invalid-feedback absolute bottom-12 right-0 float-right text-sm ${
-              errorMessage && "text-secondary-red-100"
+            className={`invalid-feedback absolute bottom-12 right-0 float-right font-normal text-xs mb-2 ${
+              errorMessage && "text-red-600"
             }`}
           >
             {errorMessage}
@@ -26,10 +31,9 @@ export const TextInput = forwardRef(
           <input
             {...rest}
             name={name}
-            ref={ref}
             type={type}
             className={`border rounded-lg focus:outline-none p-4 w-full placeholder:pl-3 border-[#E5E6F2] ${inputClass} ${
-              errorMessage && "border-2 border-secondary-red-100 "
+              errorMessage && " border-secondary-red-100 "
             } focus:border-secondary-brown-100 `}
           />
         </div>
