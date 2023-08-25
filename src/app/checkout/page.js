@@ -1,20 +1,19 @@
 "use client";
 
-import {
-  Button,
-  CartProducts,
-  PaystackIntegration,
-  RadioInput,
-  TextInput,
-} from "@/components";
-import React from "react";
+import { Button, CartProducts, RadioInput, TextInput } from "@/components";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useCart } from "react-use-cart";
-import Link from "next/link";
+import dynamic from "next/dynamic";
+import { toast } from "react-toastify";
 import PaystackPop from "@paystack/inline-js";
+// const PaystackPop = dynamic(import("@paystack/inline-js"), { ssr: false });
 const Checkout = () => {
+  const [isClient, setIsClient] = useState(false);
+  const [payStackTest, setPaystackTest] = useState(false)
+  
   const schema = yup.object().shape({
     name: yup.string().required("Name is required"),
     email: yup.string().required("Email is required"),
@@ -49,20 +48,35 @@ const Checkout = () => {
   const shippingAmount = 50;
   const vatAmount = 1079;
   const grandTotal = cartTotal + shippingAmount + vatAmount;
-
+  
   const paystack = new PaystackPop();
-
+  
+  
   const paystackTest = (data) => {
     paystack?.newTransaction({
       key: "pk_test_abcfefe9fdc9e5d5a70d2ad0bee3fe2390ce12dd",
       amount: grandTotal * 80000,
       email: data.email,
-      firstname: "oluremi",
+      firstname: data.name,
+      onSuccess(transaction) {
+        let message = `Payment Complete! Reference ${transaction.reference}`;
+      },
+      onCancel() {
+        toast("You have canceled the transaction", {
+          hideProgressBar: true,
+          autoClose: 4000,
+          type: "error",
+          position: "top-right",
+          className: "mt-20 text-sm",
+        });
+      },
     });
   };
-
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, [grandTotal, ]);
   const onSubmitHandler = (data) => {
-   
     paystackTest(data);
   };
 
