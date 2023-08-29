@@ -105,7 +105,7 @@ const Header = () => {
       </div>
 
       <Modal show={showCartModal} onClose={() => setShowCartModal(false)}>
-        <Cart handleCancelClick={() => setShowCartModal(false)}/>
+        <Cart handleCancelClick={() => setShowCartModal(false)} />
       </Modal>
     </>
   );
