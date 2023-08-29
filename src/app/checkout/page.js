@@ -6,9 +6,9 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useCart } from "react-use-cart";
-import dynamic from "next/dynamic";
-import { toast } from "react-toastify";
-import PaystackPop from "@paystack/inline-js";
+
+// import { toast } from "react-toastify";
+// import PaystackPop from "@paystack/inline-js";
 // const PaystackPop = dynamic(import("@paystack/inline-js"), { ssr: false });
 const Checkout = () => {
   const [isClient, setIsClient] = useState(false);
