@@ -76,7 +76,7 @@ const Checkout = () => {
     setIsClient(true);
   }, [grandTotal]);
   const onSubmitHandler = (data) => {
-    paystackTest(data);
+    // paystackTest(data);
   };
 
   return (
