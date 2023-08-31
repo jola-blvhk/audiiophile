@@ -5,12 +5,14 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useCart } from "react-use-cart";
 
+import { useCart } from "react-use-cart";
+import { PaystackButton } from "react-paystack";
 // import { toast } from "react-toastify";
-import PaystackPop from "@paystack/inline-js";
+// import PaystackPop from "@paystack/inline-js";
 // const PaystackPop = dynamic(import("@paystack/inline-js"), { ssr: false });
 const Checkout = () => {
+  
   const [isClient, setIsClient] = useState(false);
   const [payStackTest, setPaystackTest] = useState(false);
 
@@ -71,6 +73,19 @@ const Checkout = () => {
   //     },
   //   });
   // };
+  const componentProps = {
+    email,
+    grandTotal,
+    metadata: {
+      name,
+      phone_number,
+    },
+    publicKey,
+    text: "Pay Now",
+    onSuccess: () =>
+      alert("Thanks for doing business with us! Come back soon!!"),
+    onClose: () => alert("Wait! You need this oil, don't go!!!!"),
+  };
 
   useEffect(() => {
     setIsClient(true);
