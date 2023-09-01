@@ -5,16 +5,11 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 import { useCart } from "react-use-cart";
 import { usePaystackPayment } from "react-paystack";
-import { PaystackButton } from "react-paystack";
 import { toast } from "react-toastify";
-// import PaystackPop from "@paystack/inline-js";
-// const PaystackPop = dynamic(import("@paystack/inline-js"), { ssr: false });
+
 const Checkout = () => {
-  const [isClient, setIsClient] = useState(false);
-  const [payStackTest, setPaystackTest] = useState(false);
 
   const schema = yup.object().shape({
     name: yup.string().required("Name is required"),
@@ -59,28 +54,6 @@ const Checkout = () => {
   };
 
   const initializePayment = usePaystackPayment(config);
-  // const paystack = new PaystackPop();
-
-  // const paystackTest = (data) => {
-  //   paystack?.newTransaction({
-  //     key: "pk_test_abcfefe9fdc9e5d5a70d2ad0bee3fe2390ce12dd",
-  //     amount: grandTotal * 80000,
-  //     email: data.email,
-  //     firstname: data.name,
-  //     onSuccess(transaction) {
-  //       let message = `Payment Complete! Reference ${transaction.reference}`;
-  //     },
-  //     onCancel() {
-  //       toast("You have canceled the transaction", {
-  //         hideProgressBar: true,
-  //         autoClose: 4000,
-  //         type: "error",
-  //         position: "top-right",
-  //         className: "mt-20 text-sm",
-  //       });
-  //     },
-  //   });
-  // };
 
   const onSuccess = (reference) => {
     // Implementation for whatever you want to do with reference and after success call.
@@ -98,9 +71,6 @@ const Checkout = () => {
     });
   };
 
-  // useEffect(() => {
-  //   setIsClient(true);
-  // }, [grandTotal]);
   const onSubmitHandler = () => {
     // paystackTest(data);
     initializePayment(onSuccess, onClose);
