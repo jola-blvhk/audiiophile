@@ -7,12 +7,12 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useCart } from "react-use-cart";
+import { usePaystackPayment } from "react-paystack";
 import { PaystackButton } from "react-paystack";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 // import PaystackPop from "@paystack/inline-js";
 // const PaystackPop = dynamic(import("@paystack/inline-js"), { ssr: false });
 const Checkout = () => {
-  
   const [isClient, setIsClient] = useState(false);
   const [payStackTest, setPaystackTest] = useState(false);
 
@@ -51,6 +51,14 @@ const Checkout = () => {
   const vatAmount = 1079;
   const grandTotal = cartTotal + shippingAmount + vatAmount;
 
+  const config = {
+    reference: new Date().getTime().toString(),
+    email: "awujoolabello@gmail.com",
+    amount: grandTotal * 80000,
+    publicKey: "pk_test_abcfefe9fdc9e5d5a70d2ad0bee3fe2390ce12dd",
+  };
+
+  const initializePayment = usePaystackPayment(config);
   // const paystack = new PaystackPop();
 
   // const paystackTest = (data) => {
@@ -73,25 +81,29 @@ const Checkout = () => {
   //     },
   //   });
   // };
-  const componentProps = {
-    email,
-    grandTotal,
-    metadata: {
-      name,
-      phone_number,
-    },
-    publicKey,
-    text: "Pay Now",
-    onSuccess: () =>
-      alert("Thanks for doing business with us! Come back soon!!"),
-    onClose: () => alert("Wait! You need this oil, don't go!!!!"),
+
+  const onSuccess = (reference) => {
+    // Implementation for whatever you want to do with reference and after success call.
+    console.log(reference);
   };
 
-  useEffect(() => {
-    setIsClient(true);
-  }, [grandTotal]);
-  const onSubmitHandler = (data) => {
+  const onClose = () => {
+    // implementation for  whatever you want to do when the Paystack dialog closed.
+    toast("You have canceled the transaction", {
+      hideProgressBar: true,
+      autoClose: 4000,
+      type: "error",
+      position: "top-right",
+      className: "mt-20 text-sm",
+    });
+  };
+
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, [grandTotal]);
+  const onSubmitHandler = () => {
     // paystackTest(data);
+    initializePayment(onSuccess, onClose);
   };
 
   return (
