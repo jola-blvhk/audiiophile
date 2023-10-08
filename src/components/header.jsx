@@ -16,7 +16,7 @@ const Header = () => {
   const { totalUniqueItems } = useCart();
   return (
     <>
-      <div className="fixed z-[10000] top-0 w-full ">
+      <div className="fixed z-[10000] top-0 w-full  ">
         <div
           className={`bg-primary-black-90 p-5 relative px-9 md:px-12 lg:px-36  `}
         >
